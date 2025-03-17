@@ -1,16 +1,11 @@
-fact1(0) = 1
-fact1(n) = n * fact1(n-1)
+import Data.Char (chr, ord, isAlpha, isUpper, isLower)
 
-fact2(n) = if n == 0 then 1 else n * fact2(n-1)
+cifra :: Int -> Char -> Char
+cifra num letra 
+    | isUpper letra = chr $ ord 'A' + mod (ord letra - ord 'A' + num) 26
+    | isLower letra = chr $ ord 'a' + mod (ord letra - ord 'a' + num) 26
+    | otherwise = letra
 
-fact3(n)
-| (n) == 0 = 1
-| otherwise = n * fact3(n-1)
 
 
-fib(n)
-| n == 0 = 0
-| n == 1 = 1
-| otherwise = fib(n-1) + fib(n-2)
-
-par(n) = (mod n 2) == 0
+ 
